@@ -28,7 +28,7 @@ const Globe = ({ guesses, target, countries, setTarget, setGuesses, setGameWon }
       const latest = markerData[0];
       globeRef.current.pointOfView({ lat: latest.lat, lng: latest.lng, altitude: 1.5 }, 1000);
     }
-  }, [guesses]);
+  }, [guesses, markerData]);
 
   useEffect(() => {
     fetch("https://unpkg.com/world-atlas@2.0.2/countries-110m.json")
